@@ -9,7 +9,7 @@
     <div id="questions">
         <!-- Quiz questions will be displayed here -->
     </div>
-    <button onclick="submitQuiz()">Submit Quiz</button>
+    <button id="submit" onclick="submitQuiz()">Submit Quiz</button>
     <div id="score-container"></div>
     <div id="previous-score"></div> <!-- Display previous score if available -->
     
@@ -74,10 +74,12 @@ function renderQuestions() {
       // Pre-select answer if already stored in userAnswers
       if (userAnswers[i] === choice) {
         choiceElement.checked = true;
+        choiceElement.setAttribute('checked', 'true');
       }
 
       choiceElement.addEventListener('change', () => {
         userAnswers[i] = choiceElement.value; // Save answer when selected
+        choiceElement.setAttribute('checked', 'true'); // Update 'checked' attribute
         saveProgress();
       });
 
