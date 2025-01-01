@@ -10,7 +10,7 @@
         <!-- Quiz questions will be displayed here -->
     </div>
     <button id="submit" onclick="submitQuiz()">Submit Quiz</button>
-    <div id="score-container"></div>
+    <div id="score"></div>
     <div id="previous-score"></div> <!-- Display previous score if available -->
     
     <script src="quiz.js"></script>
@@ -105,7 +105,7 @@ function submitQuiz() {
       score++;
     }
   }
-  document.getElementById('score-container').textContent = `Your score is ${score} out of 5.`;
+  document.getElementById('score').textContent = `Your score is ${score} out of 5.`;
   localStorage.setItem('score', score); // Store score in localStorage
 }
 
